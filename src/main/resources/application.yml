@@ -3,7 +3,8 @@ app:
   stock:
     base-url: https://www.boursorama.com/cours
     daily-report:
-      cron: 0 0 19 * * *
+      # At 19:00 on every day-of-week from Monday through Friday.
+      cron: ${ESTOCK_STOCK_DAILY_REPORT_CRON:0 19 * * 1-5}
 
   mail:
     sender: ${ESTOCK_MAIL_SENDER}

@@ -2,6 +2,9 @@
     <configuration default="false" name="App [dev]" type="SpringBootApplicationConfigurationType"
                    factoryName="Spring Boot">
         <option name="ACTIVE_PROFILES" value="dev" />
+        <envs>
+            <env name="ESTOCK_STOCK_DAILY_REPORT_CRON" value="0 * * * * *" />
+        </envs>
         <module name="estock" />
         <option name="SPRING_BOOT_MAIN_CLASS" value="fr.knife.estockapi.EstockApplication" />
         <method v="2">

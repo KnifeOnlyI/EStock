@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 
 /**
  * The service to manage emails
@@ -52,11 +53,17 @@ public class EmailService {
         MimeMessage message = this.mailSender.createMimeMessage();
 
         try {
-            MimeMessageHelper helper = new MimeMessageHelper(message, true);
+            message.setHeader("Content-Type", "text/html; charset=\"utf-8\"");
+
+            MimeMessageHelper helper = new MimeMessageHelper(
+                message,
+                MimeMessageHelper.MULTIPART_MODE_NO,
+                StandardCharsets.UTF_8.name()
+            );
             helper.setFrom(this.sender, this.appName);
             helper.setTo(to);
             helper.setSubject(subject);
-            helper.setText(content);
+            helper.setText(content, true);
         } catch (MessagingException | UnsupportedEncodingException e) {
             throw new InternalServerException(e.getMessage());
         }

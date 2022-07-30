@@ -1,6 +1,7 @@
 package fr.knife.estockapi.service;
 
 import fr.knife.estockapi.BaseTest;
+import fr.knife.estockapi.repository.TrackedStockRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -16,7 +17,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
  * The StockService test class
  */
 @ExtendWith({MockitoExtension.class, SpringExtension.class})
-@ContextConfiguration(classes = {HTMLService.class})
+@ContextConfiguration(classes = {HTMLService.class, TrackedStockRepository.class})
 class StockServiceTest extends BaseTest {
     /**
      * The service to manage stocks
@@ -30,6 +31,12 @@ class StockServiceTest extends BaseTest {
     private HTTPService httpService;
 
     /**
+     * The repository to manage tracked stocks
+     */
+    @Autowired
+    private TrackedStockRepository trackedStockRepository;
+
+    /**
      * The service to manage HTML operations
      */
     @Autowired
@@ -40,7 +47,7 @@ class StockServiceTest extends BaseTest {
      */
     @BeforeEach
     void setUp() {
-        this.stockService = new StockService(this.httpService, this.htmlService);
+        this.stockService = new StockService(this.httpService, this.htmlService, this.trackedStockRepository);
     }
 
     /**
