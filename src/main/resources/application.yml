@@ -2,6 +2,8 @@ app:
   name: ${ESTOCK_APP_NAME:EStock}
   stock:
     base-url: https://www.boursorama.com/cours
+    daily-report:
+      cron: 0 0 19 * * *
 
   mail:
     sender: ${ESTOCK_MAIL_SENDER:}
