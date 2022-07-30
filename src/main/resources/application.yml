@@ -1,3 +1,25 @@
 app:
+  name: ${ESTOCK_APP_NAME:EStock}
   stock:
     base-url: https://www.boursorama.com/cours
+
+  mail:
+    sender: ${ESTOCK_MAIL_SENDER:}
+    receiver: ${ESTOCK_MAIL_RECEIVER:}
+    stock:
+      daily-report:
+        subject: ${EMAIL_MAIL_STOCK_DAILY_REPORT_SUBJECT:Daily report}
+
+spring:
+  mail:
+    host: ${ESTOCK_MAIL_HOST:}
+    port: ${ESTOCK_MAIL_PORT:}
+    username: ${ESTOCK_MAIL_USERNAME:}
+    password: ${ESTOCK_MAIL_PASSWORD:}
+    properties:
+      mail:
+        debug: false
+        smtp:
+          auth: ${ESTOCK_MAIL_SMTP_AUTH_ENABLED:}
+          starttls:
+            enable: ${ESTOCK_MAIL_SMTP_TLS_ENABLED:}

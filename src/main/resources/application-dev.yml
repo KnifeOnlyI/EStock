@@ -1,0 +1,16 @@
+app:
+  mail:
+    sender: noreply@estock-test.com
+    receiver: test@test.com
+
+spring:
+  mail:
+    host: localhost
+    port: 1025
+    properties:
+      mail:
+        debug: true
+        smtp:
+          auth: false
+          starttls:
+            enable: false
