@@ -7,6 +7,7 @@
                 <option name="envFilePath" value="" />
                 <option name="services">
                     <list>
+                        <option value="database" />
                         <option value="mail" />
                     </list>
                 </option>

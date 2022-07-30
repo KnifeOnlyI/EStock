@@ -4,9 +4,21 @@ app:
     receiver: test@test.com
 
 spring:
+  devtools:
+    add-properties: true
+
+  datasource:
+    username: estock
+    password: estock
+
+  liquibase:
+    change-log: classpath:/db/changelog-dev/master.xml
+
   mail:
     host: localhost
     port: 1025
+    username:
+    password:
     properties:
       mail:
         debug: true

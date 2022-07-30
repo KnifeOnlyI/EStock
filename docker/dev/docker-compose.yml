@@ -1,7 +1,17 @@
 version: "3.6"
 services:
+  database:
+    container_name: estock_database
+    image: postgres:13.4-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=estock
+      - POSTGRES_PASSWORD=estock
+      - POSTGRES_DB=estock
+
   mail:
-    container_name: mail
+    container_name: estock_mail
     image: maildev/maildev
     ports:
       - "1025:25"
