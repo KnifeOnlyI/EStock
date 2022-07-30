@@ -1,0 +1,3 @@
+app:
+  stock:
+    base-url: https://www.boursorama.com/cours
