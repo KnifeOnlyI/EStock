@@ -1,0 +1,11 @@
+<component name="ProjectRunConfigurationManager">
+    <configuration default="false" name="App [dev]" type="SpringBootApplicationConfigurationType"
+                   factoryName="Spring Boot">
+        <option name="ACTIVE_PROFILES" value="dev" />
+        <module name="estock" />
+        <option name="SPRING_BOOT_MAIN_CLASS" value="fr.knife.estockapi.EstockApplication" />
+        <method v="2">
+            <option name="Make" enabled="true" />
+        </method>
+    </configuration>
+</component>
