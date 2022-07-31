@@ -24,10 +24,10 @@ A financial tool to track stock values
 
 ```bash
 # Build containers (only the first time or if the docker-compose configuration changed)
-docker-compose -p estock -f ./docker/prod/docker-compose.yml build
+docker-compose -p estock --env-file docker/prod/.env -f ./docker/prod/docker-compose.yml build
 
 # Start containers (start app)
-docker-compose -p estock -f ./docker/prod/docker-compose.yml up -d
+docker-compose -p estock --env-file docker/prod/.env -f ./docker/prod/docker-compose.yml up -d
 
 # Stop containers (stop app)
 docker-compose -p estock -f ./docker/prod/docker-compose.yml stop

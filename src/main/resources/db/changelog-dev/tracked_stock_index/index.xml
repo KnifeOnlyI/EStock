@@ -4,11 +4,11 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                    https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd"
 >
-    <changeSet id="dev-tracked_stock" author="knife">
-        <loadData tableName="tracked_stock" file="data.csv" relativeToChangelogFile="true" />
+    <changeSet id="dev-tracked_stock_index" author="knife">
+        <loadData tableName="tracked_stock_index" file="data.csv" relativeToChangelogFile="true" />
 
         <!-- To avoid bugs with sequence problems : https://liquibase.jira.com/browse/CORE-2495 -->
-        <dropSequence sequenceName="tracked_stock_seq" />
-        <createSequence sequenceName="tracked_stock_seq" incrementBy="1" minValue="1" startValue="6" />
+        <dropSequence sequenceName="tracked_stock_index_seq" />
+        <createSequence sequenceName="tracked_stock_index_seq" incrementBy="1" minValue="1" startValue="6" />
     </changeSet>
 </databaseChangeLog>

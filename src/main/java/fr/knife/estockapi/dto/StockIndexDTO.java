@@ -5,31 +5,16 @@ import lombok.Setter;
 import lombok.experimental.Accessors;
 
 /**
- * Represent a stock
+ * Represent a stock index
  */
 @Getter
 @Setter
 @Accessors(chain = true)
-public class StockDTO {
-    /**
-     * The ID
-     */
-    private Long id;
-
+public class StockIndexDTO {
     /**
      * The name
      */
     private String name;
-
-    /**
-     * The ISIN code
-     */
-    private String isin;
-
-    /**
-     * The value
-     */
-    private Double value;
 
     /**
      * The formatted value

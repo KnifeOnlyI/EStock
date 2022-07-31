@@ -40,7 +40,7 @@ class StockServiceTest extends BaseTest {
      */
     @BeforeEach
     void setUp() {
-        this.stockService = new StockService(this.httpService, this.htmlService, null);
+        this.stockService = new StockService(this.httpService, this.htmlService, null, null);
     }
 
     /**
