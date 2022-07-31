@@ -31,12 +31,21 @@
             color: white;
         }
 
-        .value {
+        .text-left {
+            text-align: left;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-right {
             text-align: right;
         }
     </style>
 </head>
 <body>
+<h1>Tableau général des actions</h1>
 <table>
     <thead>
     <tr>
@@ -47,9 +56,25 @@
     </thead>
     <tbody>
     <tr th:each="stock: ${stocks}">
-        <td th:utext="${stock.name}"></td>
-        <td th:utext="${stock.isin}"></td>
-        <td class="value" th:utext="${stock.formattedValue}"></td>
+        <td class="text-left" th:utext="${stock.name}"></td>
+        <td class="text-center" th:utext="${stock.isin}"></td>
+        <td class="text-right" th:utext="${stock.formattedValue}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<h1>Tableau général des indices</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Indice</th>
+        <th>Valeur</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="stockIndex: ${stockIndexes}">
+        <td class="text-left" th:utext="${stockIndex.name}"></td>
+        <td class="text-right" th:utext="${stockIndex.formattedValue}"></td>
     </tr>
     </tbody>
 </table>

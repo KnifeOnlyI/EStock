@@ -4,9 +4,6 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                    https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd"
 >
-    <include file="classpath:/db/changelog/master.xml" />
-
-    <include file="tracked_stock/index.xml" relativeToChangelogFile="true" />
     <include file="stock_index/index.xml" relativeToChangelogFile="true" />
     <include file="tracked_stock_index/index.xml" relativeToChangelogFile="true" />
 </databaseChangeLog>

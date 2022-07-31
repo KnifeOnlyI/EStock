@@ -1,6 +1,8 @@
 package fr.knife.estockapi.service;
 
+import fr.knife.estockapi.domain.StockIndexEntity;
 import fr.knife.estockapi.domain.TrackedStockEntity;
+import fr.knife.estockapi.repository.StockIndexRepository;
 import fr.knife.estockapi.repository.TrackedStockRepository;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -28,6 +30,11 @@ public class StockService {
     private final TrackedStockRepository trackedStockRepository;
 
     /**
+     * The repository to manage stock indexes
+     */
+    private final StockIndexRepository stockIndexRepository;
+
+    /**
      * The base URL of where to fetch the value
      */
     @Value("${app.stock.base-url}")
@@ -39,15 +46,18 @@ public class StockService {
      * @param httpService            The service to manage HTTP operations
      * @param htmlService            The service to manage HTML operations
      * @param trackedStockRepository The repository to manage tracked stocks
+     * @param stockIndexRepository   The repository to manage stock indexes
      */
     public StockService(
         HTTPService httpService,
         HTMLService htmlService,
-        TrackedStockRepository trackedStockRepository
+        TrackedStockRepository trackedStockRepository,
+        StockIndexRepository stockIndexRepository
     ) {
         this.httpService = httpService;
         this.htmlService = htmlService;
         this.trackedStockRepository = trackedStockRepository;
+        this.stockIndexRepository = stockIndexRepository;
     }
 
     /**
@@ -70,5 +80,14 @@ public class StockService {
      */
     public List<TrackedStockEntity> getAllTracked() {
         return this.trackedStockRepository.findAll();
+    }
+
+    /**
+     * Get all stock indexes
+     *
+     * @return The result
+     */
+    public List<StockIndexEntity> getAllIndexes() {
+        return this.stockIndexRepository.findAll();
     }
 }
