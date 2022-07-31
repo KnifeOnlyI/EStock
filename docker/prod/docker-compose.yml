@@ -1,0 +1,23 @@
+version: "3.6"
+services:
+  app:
+    container_name: estock_prod_app
+    build: .
+    env_file:
+      - .env
+    depends_on:
+      - database
+    volumes:
+      - ./app-data:/opt/app
+
+  database:
+    container_name: estock_prod_database
+    image: postgres:13.4-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=${ESTOCK_DATABASE_NAME}
+      - POSTGRES_USER=${ESTOCK_DATABASE_USER}
+      - POSTGRES_PASSWORD=${ESTOCK_DATABASE_PASSWORD}
+    volumes:
+      - ./db-data:/tmp

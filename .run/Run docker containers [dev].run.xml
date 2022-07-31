@@ -3,8 +3,9 @@
                    factoryName="docker-compose.yml" server-name="Docker">
         <deployment type="docker-compose.yml">
             <settings>
-                <option name="composeProjectName" value="EStock" />
+                <option name="composeProjectName" value="estock_dev" />
                 <option name="envFilePath" value="" />
+                <option name="commandLineOptions" value="--build" />
                 <option name="services">
                     <list>
                         <option value="database" />
@@ -12,6 +13,7 @@
                     </list>
                 </option>
                 <option name="sourceFilePath" value="docker/dev/docker-compose.yml" />
+                <option name="upForceRecreate" value="true" />
             </settings>
         </deployment>
         <method v="2" />

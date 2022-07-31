@@ -31,3 +31,8 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Docker ###
+docker/prod/.env
+docker/prod/db-data
+docker/prod/app-data
