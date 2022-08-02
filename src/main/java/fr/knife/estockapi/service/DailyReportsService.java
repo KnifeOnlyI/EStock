@@ -33,6 +33,9 @@ public class DailyReportsService {
      */
     private final SpringTemplateEngine templateEngine;
 
+    @Value("${app.stock.daily-report.cron}")
+    private String cron;
+
     /**
      * The email of receiver
      */
@@ -102,6 +105,8 @@ public class DailyReportsService {
      * The schedule for stock daily reports
      */
     public void sendStockDailyReports() {
+        System.out.println("CRON : " + this.cron);
+
         List<TrackedStockEntity> trackedStocks = this.stockService.getAllTracked();
 
         if (!trackedStocks.isEmpty()) {
@@ -110,6 +115,8 @@ public class DailyReportsService {
                 this.stockService.getAllIndexes(),
                 stocks
             );
+
+            System.out.println("Send stock daily reports");
 
             this.emailService.send(
                 this.receiver,

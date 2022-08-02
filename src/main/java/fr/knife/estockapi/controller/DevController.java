@@ -1,7 +1,6 @@
 package fr.knife.estockapi.controller;
 
 import fr.knife.estockapi.service.DailyReportsService;
-import org.springframework.context.annotation.Profile;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,7 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * The controller for tests. Only available with "dev" profile
  */
-@Profile("dev")
 @RestController
 @RequestMapping(path = "/api/dev", produces = MediaType.APPLICATION_JSON_VALUE)
 public class DevController {
