@@ -10,7 +10,7 @@
     </parent>
     <groupId>fr.knife</groupId>
     <artifactId>estock-api</artifactId>
-    <version>1.1.1</version>
+    <version>1.1.1-SNAPSHOT</version>
     <name>estock</name>
     <description>estock</description>
     <properties>

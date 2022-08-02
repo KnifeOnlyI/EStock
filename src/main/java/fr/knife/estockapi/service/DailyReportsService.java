@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.thymeleaf.context.Context;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 
+import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -101,6 +102,7 @@ public class DailyReportsService {
     /**
      * The schedule for stock daily reports
      */
+    @Transactional
     public void sendStockDailyReports() {
         List<TrackedStockEntity> trackedStocks = this.stockService.getAllTracked();
 
