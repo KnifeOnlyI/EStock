@@ -106,7 +106,10 @@ public class DailyReportsService {
 
         if (!trackedStocks.isEmpty()) {
             List<StockDTO> stocks = this.buildStockDTOList(trackedStocks);
-            List<StockIndexDTO> stockIndexes = this.buildStockIndexDTOList(this.stockService.getAllIndexes(), stocks);
+            List<StockIndexDTO> stockIndexes = DailyReportsService.buildStockIndexDTOList(
+                this.stockService.getAllIndexes(),
+                stocks
+            );
 
             this.emailService.send(
                 this.receiver,
